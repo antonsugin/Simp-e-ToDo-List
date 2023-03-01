@@ -25,15 +25,13 @@ mongoose.set('strictQuery', true);
 mongoose.connect("mongodb://localhost:27017/ToDoDB");
 
 
-app.get('/', () => {
-    console.log('hi');
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 })
 
 
 
-
-
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 
 app.use('/', router);
 app.use(express.static(path.join(__dirname, 'public')));
