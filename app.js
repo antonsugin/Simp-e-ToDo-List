@@ -11,6 +11,8 @@ const ejs = require('ejs');
 const mongoose = require('mongoose');
 
 const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 27017;
+
 
 
 
@@ -23,6 +25,8 @@ mongoose.set('strictQuery', true);
 // });
 
 mongoose.connect("mongodb://localhost:27017/ToDoDB");
+
+
 
 
 router.get('/', (req, res) => {
